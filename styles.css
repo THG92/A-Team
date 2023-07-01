@@ -1,0 +1,236 @@
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    height: 100vh;
+}
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    min-height: 100%;
+}
+.card-grid{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 24px;
+    max-width: 1800px;
+    width: 100%;
+
+}
+
+.card{
+    position: relative;
+    list-style: none;
+    height: 700px;
+
+}
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.75) saturate(1, .2) contrast(0.85);
+    transform: scale(1) translateZ(0);
+    transform-origin: center;
+    transition: filter 200ms linear, transform 200ms linear;
+}
+.card:hover .background{
+transform: scale(1.05) translateZ(0);
+}
+.card-grid:hover >  .card:not(:hover) .background{
+    filter: brightness(0.5) saturate(0) contrast(0.85) blur();
+    }
+.content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 24px;
+
+}
+.content .category{
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    font-size: 0.9rem 
+}
+.content .heading{
+    color: rgba(12, 13, 13, 0.6);
+    font-size: 1.9rem; 
+    line-height: 1.4;
+    word-spacing: 100vw;
+    text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 960px){
+    .card-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media screen and (max-width: 460px){
+    .card-grid{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+#elearning{
+    color: #8d8888;
+}
+#research{
+    color: #d0cccc;
+}
+#data{
+    color: #f9f3f3;
+}
+
+
+/**chatbot**/
+
+.chatbot-container {
+    width: 450px;
+    height: 600px;
+    margin: 25px 50px 75px 100px;
+    background-color: #c9d2d3;
+    border: 1px solid #410c79;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    justify-content: end;
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    
+    
+  }
+  
+  #chatbot {
+    background-color: #72A0C1;
+    border: 1px solid #eef1f5;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+  
+  #header {
+    background-color: #002244;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+  }
+  
+  message-container {
+    background: #002244;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  #conversation {
+    height: 450px;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .chatbot-message {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    font-size: 20px;
+    line-height: 25px;
+    border-radius: 20px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    max-width: 100%;
+    padding: 0 15px;
+    
+  
+  }
+  
+  .user-message {
+    justify-content: flex-end;
+    
+  
+  }
+  
+  .chatbot-text {
+    background-color: white;
+    color: #333333;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .chatbot-text1 {
+    background-color: white;
+    color: #333333;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 13px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #input-form {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #eef1f5;
+  }
+  
+  #input-field {
+    flex: 1;
+    height: 60px;
+    border: 1px solid #eef1f5;
+    border-radius: 4px;
+    padding: 0 5px;
+    font-size: 25px;
+    transition: border-color 0.3s;
+    background: #ffffff;
+    color: #333333;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #input-field:focus {
+    border-color: #333333;
+    outline: none;
+  }
+  
+  #submit-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+  }
+
+  #submit-button:hover{
+   color: fuchsia;
+  }
+  
+  #fold-unfold {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 30px 60px;
+    border-radius: 5px;
+    font-size: 40px;
+    box-shadow: #be5283;
+   
+  
+  }
+  #fold-unfold:hover{
+    background-color: rgb(231, 156, 231);
+    font-size: 55px;
+    border-color: lime;
+    
+  }
+  
